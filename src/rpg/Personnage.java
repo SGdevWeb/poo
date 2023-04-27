@@ -67,6 +67,14 @@ public class Personnage {
         this.armure = armure;
     }
 
+    /**
+     * Le personnage est-il encore en vie ?
+     * @return boolean
+     */
+    public boolean IsAlive() {
+        return this.getPV() > 0;
+    }
+
     @Override
     public String toString(){
         return this.getNom() + " : " + this.getPV();

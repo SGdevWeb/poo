@@ -48,12 +48,11 @@ public class Main {
         }
 
         for (int j=0 ; j < ennemis.size() ; j++){
-            do {
-                personnage1.combattre(ennemis.get(j));
-                if(ennemis.get(j).getPV()>0){
-                    ennemis.get(j).combattre(personnage1);
-                }
-            } while (personnage1.getPV()>0 && ennemis.get(j).getPV()>0);
+            Personnage ennemi = ennemis.get(j);
+            // combat
+            Combat arena = new Combat(personnage1, ennemi);
+            System.out.println(arena.resoudrecombat().getNom() + " est le grand vainqueur");
+
         }
 
         if (personnage1.getPV() > 0){
