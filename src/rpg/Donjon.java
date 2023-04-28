@@ -15,11 +15,11 @@ public class Donjon {
         Random rand = new Random();
         int i = 0;
         while (i < nbPiece){
-            monstres.add( new Personnage(
+            this.monstres.add( new Personnage(
                     rand.nextInt(10*(i+1), 20*(i+1)),
-                    "gobelin"+(i+1),
-                    new Arme("gourdin", 8),
-                    new Armure("Bouclier en carton", 5)
+                    StaticData.GenererNom(),
+                    StaticData.listeArmes[i],
+                    StaticData.listeArmures[i]
             ));
             i++;
         }

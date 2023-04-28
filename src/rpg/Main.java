@@ -7,12 +7,19 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
 
+//        Personnage hero = new Personnage(
+//                100,
+//                "Jean Paul",
+//                new Arme("Epée", 10),
+//                new Armure("Bouclier en carton", 5)
+//        );
+
         Personnage hero = new Personnage(
                 100,
-                "Jean Paul",
-                new Arme("Epée", 10),
-                new Armure("Bouclier en carton", 5)
-        );
+                "Jean-Paul",
+                StaticData.listeArmes[2],
+                StaticData.listeArmures[2])
+                ;
 
 //        Arme arme1 = new Arme("Epée rouillée", 10);
 //        Armure armure1 = new Armure("Armure en carton", 5);
