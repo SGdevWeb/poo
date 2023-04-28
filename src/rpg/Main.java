@@ -61,7 +61,7 @@ public class Main {
 //            i++;
 //        }
 
-        Donjon donjon = new Donjon(hero,4q);
+        Donjon donjon = new Donjon(hero,4);
 
         donjon.run();
 
