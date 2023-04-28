@@ -15,4 +15,9 @@ public class Arme extends Objet {
     public void setDegat(int degat) {
         this.degat = degat;
     }
+
+    public void utiliser(Personnage cible){
+        cible.setArme(this);
+    }
+
 }

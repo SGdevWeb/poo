@@ -1,6 +1,6 @@
 package rpg;
 
-public class Objet {
+public abstract class Objet {
 
     protected String nom;
     protected int poids;
@@ -26,4 +26,6 @@ public class Objet {
     public void setPoids(int poids) {
         this.poids = poids;
     }
+
+    public abstract void utiliser(Personnage cible);
 }

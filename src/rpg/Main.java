@@ -15,11 +15,11 @@ public class Main {
 //        );
 
         Personnage hero = new Personnage(
-                100,
+                200,
                 "Jean-Paul",
-                StaticData.listeArmes[2],
-                StaticData.listeArmures[2])
-                ;
+                StaticData.listeArmes[4],
+                StaticData.listeArmures[4]
+        );
 
 //        Arme arme1 = new Arme("Epée rouillée", 10);
 //        Armure armure1 = new Armure("Armure en carton", 5);
@@ -61,7 +61,7 @@ public class Main {
 //            i++;
 //        }
 
-        Donjon donjon = new Donjon(hero,3);
+        Donjon donjon = new Donjon(hero,4q);
 
         donjon.run();
 

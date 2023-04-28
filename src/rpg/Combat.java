@@ -11,12 +11,12 @@ public class Combat {
     }
 
     public Personnage resoudrecombat(){
-        do {
+        while(perso1.IsAlive() && perso2.IsAlive()){
             perso1.combattre(perso2);
-            if(perso2.getPV()>0){
+            if(perso2.IsAlive()){
                 perso2.combattre(perso1);
             }
-        } while (perso1.getPV()>0 && perso2.getPV()>0);
+        }
         return (perso1.IsAlive()) ? perso1 : perso2;
     }
 

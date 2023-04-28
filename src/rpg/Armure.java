@@ -15,4 +15,8 @@ public class Armure extends Objet {
     public void setDefense(int defense) {
         this.defense = defense;
     }
+
+    public void utiliser(Personnage cible){
+        cible.setArmure(this);
+    }
 }
