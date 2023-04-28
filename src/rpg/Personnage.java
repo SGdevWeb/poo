@@ -26,12 +26,13 @@ public class Personnage {
         degatAttaque = this.arme.getDegat() - Math.round(0.1f * ennemi.armure.getDefense());
         nouveauPv = ennemi.getPV() - degatAttaque;
         ennemi.setPV(nouveauPv);
-        if (ennemi.getPV() > 0){
-            System.out.println("PV de " + this.toString());
-        } else {
-            System.out.println(ennemi.getNom() + " est vaincu !");
-            ennemi.setPV(0);
-        }
+        System.out.println(ennemi.IsAlive() ? ("Pv de " + this.toString()) : (ennemi.getNom() + " est vaincu !"));
+//        if (ennemi.getPV() > 0){
+//            System.out.println("PV de " + this.toString());
+//        } else {
+//            System.out.println(ennemi.getNom() + " est vaincu !");
+//            ennemi.setPV(0);
+//        }
 
     }
 

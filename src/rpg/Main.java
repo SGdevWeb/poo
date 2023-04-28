@@ -7,6 +7,13 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
 
+        Personnage hero = new Personnage(
+                100,
+                "Jean Paul",
+                new Arme("Epée", 10),
+                new Armure("Bouclier en carton", 5)
+        );
+
 //        Arme arme1 = new Arme("Epée rouillée", 10);
 //        Armure armure1 = new Armure("Armure en carton", 5);
 //        Personnage personnage1 = new Personnage(100, "Jean-Paul", arme1, armure1);
@@ -28,37 +35,41 @@ public class Main {
         //
         // random.nextFloat(5f * (i+1), 10f * (i+1))
 
-        Arme arme1 = new Arme("Epée rouillée", 10);
-        Armure armure1 = new Armure("Armure en carton", 5);
+//        Arme arme1 = new Arme("Epée rouillée", 10);
+//        Armure armure1 = new Armure("Armure en carton", 5);
+//
+//        Arme arme2 = new Arme("Masse", 15);
+//        Armure armure2 = new Armure("Armure en carton", 8);
+//
+//        Personnage personnage1 = new Personnage(100, "Jean-Paul", arme1, armure1);
 
-        Arme arme2 = new Arme("Masse", 15);
-        Armure armure2 = new Armure("Armure en carton", 8);
+//        int randomEnnemi = (int) (Math.random()*(10-1) + 1);
+//        System.out.println(randomEnnemi);
+//
+//        ArrayList<Personnage> ennemis = new ArrayList<Personnage>(randomEnnemi);
 
-        Personnage personnage1 = new Personnage(100, "Jean-Paul", arme1, armure1);
+//        int i = 0;
+//        while (i < randomEnnemi){
+//            ennemis.add( new Personnage(10,"gobelin"+(i+1),arme2,armure2));
+//            i++;
+//        }
 
-        int randomEnnemi = (int) (Math.random()*(10-1) + 1);
-        System.out.println(randomEnnemi);
+        Donjon donjon = new Donjon(hero,3);
 
-        ArrayList<Personnage> ennemis = new ArrayList<Personnage>(randomEnnemi);
+        donjon.run();
 
-        int i = 0;
-        while (i < randomEnnemi){
-            ennemis.add( new Personnage(10,"gobelin"+(i+1),arme2,armure2));
-            i++;
-        }
-
-        for (int j=0 ; j < ennemis.size() ; j++){
-            Personnage ennemi = ennemis.get(j);
-            // combat
-            Combat arena = new Combat(personnage1, ennemi);
-            System.out.println(arena.resoudrecombat().getNom() + " est le grand vainqueur");
-
-        }
-
-        if (personnage1.getPV() > 0){
-            System.out.println("VICTOIRE !");
-        } else {
-            System.out.println("GAME OVER");
-        }
+//        for (int j=0 ; j < ennemis.size() ; j++){
+//            Personnage ennemi = ennemis.get(j);
+//            // combat
+//            Combat arena = new Combat(personnage1, ennemi);
+//            System.out.println(arena.resoudrecombat().getNom() + " est le grand vainqueur");
+//
+//        }
+//
+//        if (personnage1.getPV() > 0){
+//            System.out.println("VICTOIRE !");
+//        } else {
+//            System.out.println("GAME OVER");
+//        }
     }
 }
