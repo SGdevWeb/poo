@@ -39,6 +39,12 @@ public class Donjon {
         // parcourir le donjon salle par salle
         for (int i = 0 ; i < this.pieces.size() ; i++){
 
+            if(this.hero.getPV() < 60) {
+                Potion potion = new Potion("potionDeSoin",1,5);
+                potion.utiliser(this.hero);
+                System.out.println(potion.getPV() + " PV ajouté");
+            }
+
             System.out.println(pieces.get(i).resoudre() + " est le grand vainqueur");
         }
         System.out.println(hero.IsAlive() ? "VICTOIRE !" : "GAME OVER");

@@ -15,7 +15,7 @@ public class Main {
 //        );
 
         Personnage hero = new Personnage(
-                200,
+                100,
                 "Jean-Paul",
                 StaticData.listeArmes[4],
                 StaticData.listeArmures[4]
