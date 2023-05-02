@@ -30,13 +30,13 @@ public class Personnage {
         if (!ennemi.IsAlive()) {
             if (ennemi.getArme().getDegat() > this.getArme().getDegat()){
                 this.inventaire.add(this.arme);
-                ennemi.arme.utiliser(this);
+                ennemi.getArme().utiliser(this);
             } else {
                 this.inventaire.add(ennemi.arme);
             }
             if (ennemi.getArmure().getDefense() > this.getArmure().getDefense()){
                 this.inventaire.add(this.armure);
-                ennemi.arme.utiliser(this);
+                ennemi.getArme().utiliser(this);
             } else {
                 this.inventaire.add(ennemi.armure);
             }
@@ -72,6 +72,9 @@ public class Personnage {
     }
 
     public void setArme(Arme arme) {
+        if (this.arme != null) {
+            inventaire.add(this.arme);
+        }
         this.arme = arme;
     }
 
@@ -80,6 +83,9 @@ public class Personnage {
     }
 
     public void setArmure(Armure armure) {
+        if (this.armure != null) {
+            inventaire.add(this.armure);
+        }
         this.armure = armure;
     }
 
@@ -94,5 +100,13 @@ public class Personnage {
     @Override
     public String toString(){
         return this.getNom() + " : " + this.getPV();
+    }
+
+    public ArrayList<Objet> getInventaire() {
+        return inventaire;
+    }
+
+    public void setInventaire(ArrayList<Objet> inventaire) {
+        this.inventaire = inventaire;
     }
 }

@@ -9,14 +9,14 @@ public class StaticData {
             "Robuste",
             "Cassant",
             "Génial",
-            "de diamand",
+            "de diamant",
             "de fer",
             "en mousse",
             "moche",
             "le glorieux",
             "de lin",
             "le breton",
-            "le flammand",
+            "le flamand",
             "le ch'ti"
     };
     private static final String[] listeNoms = {

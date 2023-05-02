@@ -5,32 +5,41 @@ import java.util.Random;
 
 public class Donjon {
 
-    private ArrayList<Personnage> monstres = new ArrayList<Personnage>();
+    private ArrayList<Personnage> monstres = new ArrayList<>();
     private Personnage hero;
     private int nbPiece;
+    private ArrayList<Evenements> pieces = new ArrayList<>();
 
     public Donjon(Personnage hero, int nbPiece){
         this.hero = hero;
-        // générer un donjon
+        // générateur de monstres
         Random rand = new Random();
         int i = 0;
         while (i < nbPiece){
-            this.monstres.add( new Personnage(
+            if(rand.nextBoolean()){
+                this.pieces.add(new Combat(this.hero, new Personnage(
                     rand.nextInt(10*(i+1), 20*(i+1)),
                     StaticData.GenererNom(),
                     StaticData.listeArmes[i],
-                    StaticData.listeArmures[i]
-            ));
+                    StaticData.listeArmures[i])));
+            } else {
+                this.pieces.add(new Piege(this.hero));
+            }
+//            this.monstres.add( new Personnage(
+//                    rand.nextInt(10*(i+1), 20*(i+1)),
+//                    StaticData.GenererNom(),
+//                    StaticData.listeArmes[i],
+//                    StaticData.listeArmures[i]
+//            ));
             i++;
         }
     }
 
     public void run(){
-        // parcourir le donjon
-        for (int i = 0 ; i < this.monstres.size() ; i++){
-            Personnage monstre = monstres.get(i);
-            Combat arena = new Combat(this.hero, monstre);
-            System.out.println(arena.resoudrecombat() + " est le grand vainqueur");
+        // parcourir le donjon salle par salle
+        for (int i = 0 ; i < this.pieces.size() ; i++){
+
+            System.out.println(pieces.get(i).resoudre() + " est le grand vainqueur");
         }
         System.out.println(hero.IsAlive() ? "VICTOIRE !" : "GAME OVER");
     }
