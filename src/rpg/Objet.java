@@ -1,31 +1,14 @@
 package rpg;
 
-public abstract class Objet {
+public interface Objet {
 
-    protected String nom;
-    protected int poids;
-//    protected String type;
+    public String getNom();
 
-    public Objet(String nom, int poids){
-        this.nom = nom;
-        this.poids = poids;
-    }
+    public void setNom(String nom);
 
-    public String getNom() {
-        return nom;
-    }
+    public int getPoids();
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public int getPoids() {
-        return poids;
-    }
-
-    public void setPoids(int poids) {
-        this.poids = poids;
-    }
+    public void setPoids(int poids);
 
     public abstract void utiliser(Personnage cible);
 }

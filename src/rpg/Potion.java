@@ -1,24 +1,43 @@
 package rpg;
 
-public class Potion extends Objet {
+import java.util.ArrayList;
 
-    int PV = 5;
+public class Potion implements Objet {
 
-    protected Potion(String nom, int poids, int PV) {
-        super(nom, poids);
-        this.PV = PV;
+    private String nom;
+    private int poids;
+    private ArrayList<Effet> effects = new ArrayList<>();
+
+    protected Potion(String nom, int poids, ArrayList<Effet> effects) {
+        this.nom = nom;
+        this.poids = poids;
+        this.effects = effects;
     }
 
-    public int getPV() {
-        return PV;
+    @Override
+    public String getNom() {
+        return this.nom;
     }
 
-    public void setPV(int PV) {
-        this.PV = PV;
+    @Override
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    @Override
+    public int getPoids() {
+        return this.poids;
+    }
+
+    @Override
+    public void setPoids(int poids) {
+        this.poids = poids;
     }
 
     @Override
     public void utiliser(Personnage cible) {
-        cible.setPV(cible.getPV() + this.PV);
+        for(Effet effect : this.effects) {
+            effect.resoudre(cible);
+        }
     }
 }

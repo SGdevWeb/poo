@@ -1,12 +1,13 @@
 package rpg;
 import java.util.Random;
 
-public class Piege extends Evenements {
+public class Piege implements Evenements {
 
-    public Piege(Personnage perso1){
-        super(perso1);
+    private Personnage hero;
+    public Piege(Personnage hero){
+        this.hero = hero;
     }
-
+    @Override
     public Personnage resoudre(){
         Random rand = new Random();
         int degatPiege;
@@ -16,11 +17,11 @@ public class Piege extends Evenements {
             degatPiege = -5;
         }
 //        int degatPiege = rand.nextInt(11)-5;
-        perso1.setPV(perso1.getPV() + (degatPiege));
+        hero.setPV(hero.getPV() + (degatPiege));
         System.out.println(degatPiege + " de dégats");
-        System.out.println("Il reste " + perso1.getPV() + " PV à " + perso1.getNom());
+        System.out.println("Il reste " + hero.getPV() + " PV à " + hero.getNom());
 
-        return perso1;
+        return hero;
     }
 
 }

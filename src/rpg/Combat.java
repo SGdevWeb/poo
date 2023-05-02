@@ -1,22 +1,24 @@
 package rpg;
 
-public class Combat extends Evenements {
+public class Combat implements Evenements {
 
-    private Personnage perso2;
+    private Personnage hero;
+    private Personnage hero2;
 
-    public Combat(Personnage perso1, Personnage perso2){
-        super(perso1);
-        this.perso2 = perso2;
+    public Combat(Personnage hero, Personnage hero2){
+        this.hero = hero;
+        this.hero2 = hero2;
     }
 
+    @Override
     public Personnage resoudre(){
-        while(perso1.IsAlive() && perso2.IsAlive()){
-            perso1.combattre(perso2);
-            if(perso2.IsAlive()){
-                perso2.combattre(perso1);
+        while(hero.IsAlive() && hero2.IsAlive()){
+            hero.combattre(hero2);
+            if(hero2.IsAlive()){
+                hero2.combattre(hero);
             }
         }
-        return (perso1.IsAlive()) ? perso1 : perso2;
+        return (hero.IsAlive()) ? hero : hero2;
     }
 
 }
