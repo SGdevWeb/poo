@@ -1,20 +1,11 @@
 package rpg;
 
-public class Armure {
-    private String name;
+public class Armure extends Objet {
     private int defense;
 
-    protected Armure(String name, int defense) {
-        this.name = name;
+    protected Armure(String nom, int poids, int defense) {
+        super(nom, poids);
         this.defense = defense;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getDefense() {
@@ -23,5 +14,9 @@ public class Armure {
 
     public void setDefense(int defense) {
         this.defense = defense;
+    }
+
+    public void utiliser(Personnage cible){
+        cible.setArmure(this);
     }
 }
